@@ -63,7 +63,7 @@ pub trait VringT<M: GuestAddressSpace>:
 
     /// Get vring enabled state.
     fn get_enabled(&self) -> bool;
-    
+
     /// Set queue addresses for descriptor table, available ring and used ring.
     fn set_queue_info(
         &self,
@@ -178,9 +178,9 @@ impl<M: GuestAddressSpace> VringState<M> {
     }
 
     pub fn get_enabled(&self) -> bool {
-	self.enabled
+        self.enabled
     }
-    
+
     /// Set queue addresses for descriptor table, available ring and used ring.
     pub fn set_queue_info(
         &mut self,
@@ -335,9 +335,9 @@ impl<M: 'static + GuestAddressSpace> VringT<M> for VringMutex<M> {
     }
 
     fn get_enabled(&self) -> bool {
-	self.get_ref().enabled
+        self.get_ref().enabled
     }
-    
+
     fn set_queue_info(
         &self,
         desc_table: u64,
@@ -454,7 +454,7 @@ impl<M: 'static + GuestAddressSpace> VringT<M> for VringRwLock<M> {
     }
 
     fn get_enabled(&self) -> bool {
-	self.get_ref().enabled
+        self.get_ref().enabled
     }
 
     fn set_queue_info(
